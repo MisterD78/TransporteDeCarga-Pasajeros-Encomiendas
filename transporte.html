@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ejercicio1</title>
+<style>
+      body {
+        background-color: #D6EAF8 ;
+        margin: 0;
+        padding: 0;
+      }
+	  </style>
+<script language="javascript">
+<!--
+	function verifica(){
+	 resultado1="ninguna";
+	for(contador=0;contador<formulario.grupo1.length; contador++){
+	if(formulario.grupo1[contador].checked){
+		resultado1=String.fromCharCode(contador+65);
+			                       }
+			   }
+
+	if(resultado1=='A'){
+		formulario.C1.disabled=false;
+		formulario.C2.disabled=false;
+		formulario.C3.disabled=false;
+		formulario.P1.disabled=true;
+		formulario.P2.disabled=true;
+		formulario.P3.disabled=true;
+		formulario.E1.disabled=true;
+		formulario.E2.disabled=true;
+		formulario.E3.disabled=true;
+		formulario.S1.disabled=true;
+			    }
+
+	if(resultado1=='B'){
+		formulario.C1.disabled=true;
+		formulario.C2.disabled=true;
+		formulario.C3.disabled=true;
+		formulario.P1.disabled=false;
+		formulario.P2.disabled=false;
+		formulario.P3.disabled=false;
+		formulario.E1.disabled=true;
+		formulario.E2.disabled=true;
+		formulario.E3.disabled=true;
+		formulario.S1.disabled=true;
+			    }
+
+	if(resultado1=='C'){
+		formulario.C1.disabled=true;
+		formulario.C2.disabled=true;
+		formulario.C3.disabled=true;
+		formulario.P1.disabled=true;
+		formulario.P2.disabled=true;
+		formulario.P3.disabled=true;
+		formulario.E1.disabled=false;
+		formulario.E2.disabled=false;
+		formulario.E3.disabled=false;
+		formulario.S1.disabled=true;
+			   }
+
+	if(resultado1=='D'){
+		formulario.C1.disabled=true;
+		formulario.C2.disabled=true;
+		formulario.C3.disabled=true;
+		formulario.P1.disabled=true;
+		formulario.P2.disabled=true;
+		formulario.P3.disabled=true;
+		formulario.E1.disabled=true;
+		formulario.E2.disabled=true;
+		formulario.E3.disabled=true;
+		formulario.S1.disabled=false;
+			   }
+			}
+	function calcula(){
+		if(formulario.C1.disabled==false && formulario.C2.disabled==false &&
+		formulario.C3.disabled==false){
+		 agro=3.1*formulario.C1.value;
+		 meta=2.75*formulario.C2.value;
+		 mad=3.05*formulario.C3.value;
+		  formulario.C4.value=agro;
+		  formulario.C5.value=meta;
+		  formulario.C6.value=mad;
+		   suma=agro+meta+mad;
+		formulario.total.value=suma;
+					     }
+
+	if(formulario.P1.disabled==false && formulario.P2.disabled==false &&
+		formulario.P3.disabled==false){
+		   lima=22*formulario.P1.value;
+		   ica=10*formulario.P2.value;
+		   nazca=30*formulario.P3.value;
+			formulario.P4.value=lima;
+		        formulario.P5.value=ica;
+		        formulario.P6.value=nazca;
+			suma=lima+ica+nazca;
+			formulario.total.value=suma;
+					       }
+
+	if(formulario.E1.disabled==false && formulario.E2.disabled==false &&
+		   formulario.E3.disabled==false){
+		  sob=5*formulario.E1.value;
+ 		  paq=12*formulario.E2.value;
+		  bul=7*formulario.E3.value;
+		   formulario.E4.value=sob;
+		   formulario.E5.value=paq;
+		   formulario.E6.value=bul;
+			suma=sob+paq+bul;
+		  formulario.total.value=suma;
+						  }
+
+	if(formulario.S1.disabled==false){
+	   sob=25*formulario.S1.value;
+		formulario.S2.value=sob;
+		formulario.total.value=sob;
+					 }
+				}
+function restablece(){
+	const form=document.querySelector('formulario');
+	 formulario.reset();
+	 formulario.C1.disabled=true;
+	 formulario.C2.disabled=true;
+	 formulario.C3.disabled=true;
+	 formulario.P1.disabled=true;
+	 formulario.P2.disabled=true;
+	 formulario.P3.disabled=true;
+	 formulario.E1.disabled=true;
+	 formulario.E2.disabled=true;
+	 formulario.E3.disabled=true;
+	formulario.S1.disabled=true;
+		     }
+//--->
+
+</script>
+  <style type="text/css">
+	.titulo {
+	 font-family: Georgia, "Times New Roman", Times, serif;
+	 font-size: 36px;
+	 color: #900; }
+
+	.button {
+ 	  display: inline-block;
+ 	  padding: 10px 18px;
+ 	  font-size: 14px;
+ 	  cursor: pointer;
+ 	  text-align: center;
+ 	  text-decoration: none;
+ 	  outline: none;
+ 	  color:#000;
+ 	  background-color:#DCCDBE;
+ 	  border: none;
+ 	  border-radius: 10px;
+ 	  box-shadow: 0 8px #999; }
+
+	 .button:hover {background-color:#DBB7BE}
+	  .button:active {
+ 	   background-color:#000;
+ 	   box-shadow: 0 2px #333;
+ 	   transform: translateY(4px);
+			 }
+.Estilo4 {font-family: Bahnschrift}
+  .Estilo7 {font-family: "Baskerville Old Face"; color: #000000; }
+  .Estilo8 {font-family: "Eras Bold ITC"}
+  .Estilo9 {font-family: "Wingdings 2"}
+  </style> </head>
+ <body>
+ <form name="formulario">
+  <h1 align="center" class="titulo">TRANSPORTE</h1>
+<br/>
+<table style=&quot;background-color:#33475>
+ <table align="center" bordercolor="#000000" bgcolor="#A9DFBF">
+ <tr>
+<td width="28">&nbsp;</td>
+<td width="208">&nbsp;</td>
+<td>&nbsp;</td><td width="142"> <span class="Estilo4">Ingrese los datos: </span></td> <td width="152"> <div align="right" class="Estilo4">Subtotal </div></td>
+ </tr>
+<tr bgcolor="#EEECD0">
+  <td><input type="radio" name="grupo1" value="A" /></td>
+  <td width="208" align="center" bgcolor="#FAD7A0"><span class="Estilo4">Carga</span></td>
+  <td width="108"><div align="center" class="Estilo7">Agroindustrial<br />
+    Metales<br />
+    Madera</div></td>
+ 
+   <td bgcolor="#EEECD0">
+ 	<input type="text" name="C1" size="20" maxlength="30" disabled="disabled"/><br />
+ 	<input type="text" name="C2" size="20" maxlength="30" disabled="disabled"/><br />
+ 	<input type="text" name="C3" size="20" maxlength="30" disabled="disabled"/>   </td>
+ <td bgcolor="#EEECD0">
+ 	<input type="text" name="C4" size="20" maxlength="30" disabled="disabled" /><br />
+ 	<input type="text" name="C5" size="20" maxlength="30" disabled="disabled" /><br />
+ 	<input type="text" name="C6" size="20" maxlength="30" disabled="disabled" /> </td>
+</tr>
+<tr></tr>
+<tr>
+<td width="28">&nbsp;</td>
+<td width="208">&nbsp;</td>
+<td>&nbsp;</td><td width="142"> <span class="Estilo4">Ingrese los datos: </span></td> 
+<td width="152"> <div align="right" class="Estilo4">Subtotal: </div></td>
+</tr>
+<tr bgcolor="#EEECD0">
+<td><input type="radio" name="grupo1" value="B" /></td>
+<td align="center" bgcolor="#CCFFCC"> <span class="Estilo4">Pasajeros</span> </td>
+ <td><div align="center"><span class="Estilo7">Lima-Ica<br />
+   Ica-Nazca<br />
+   Nazca-Ayacucho</span><br /> 
+ </div></td>
+   <td>
+ 	<input type="text" name="P1" size="20" maxlength="30" disabled="disabled"/><br />
+ 	<input type="text" name="P2" size="20" maxlength="30" disabled="disabled"/><br />
+ 	<input type="text" name="P3" size="20" maxlength="30" disabled="disabled"/>  </td>
+ <td bgcolor="#EEECD0">
+ 	<input type="text" name="P4" size="20" maxlength="30" disabled="disabled" /><br />
+ 	<input type="text" name="P5" size="20" maxlength="30" disabled="disabled" /><br />
+ 	<input type="text" name="P6" size="20" maxlength="30" disabled="disabled" /> </td>
+</tr>
+<tr></tr>
+<tr>
+    <td width="28">&nbsp;</td>
+    <td width="208">&nbsp;</td>
+    <td>&nbsp;</td><td width="142"> <span class="Estilo4">Ingrese los datos: </span></td>
+    <td width="152"><div align="right" class="Estilo4">Subtotal</div></td>
+</tr>
+ <tr bgcolor="#EEECD0">
+<td> <input type="radio" name="grupo1" value="C" /> </td>
+<td align="center" bordercolor="#000000" bgcolor="#DAF7A6"><span class="Estilo4">Encomiendas</span></td>
+ <td> <div align="center">Sobres <br/> 
+   Paquetes <br/> 
+   Bultos <br/> 
+ </div></td>
+ <td>
+	<input type="text" name="E1" size="20" maxlength="30" disabled="disabled"/><br />
+ 	<input type="text" name="E2" size="20" maxlength="30" disabled="disabled"/><br />
+ 	<input type="text" name="E3" size="20" maxlength="30" disabled="disabled"/> </td>
+   <td bgcolor="#EEECD0">
+	 <input type="text" name="E4" size="20" maxlength="30" disabled="disabled" /><br />
+ 	 <input type="text" name="E5" size="20" maxlength="30" disabled="disabled" /><br />
+    <input type="text" name="E6" size="20" maxlength="30" disabled="disabled" /> </td>
+</tr>
+<tr></tr>
+<tr>
+	<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td> <span class="Estilo4">Ingrese los datos: </span></td><td> <div align="right" class="Estilo4">Subtotal: </div></td>
+</tr>
+ <tr bgcolor="#EEECD0">
+<td height="37"> <input type="radio" name="grupo1" value="D" /> </td>
+<td colspan="2" align="center" bordercolor="#000000" bgcolor="#FFFF99"> Animales.</td>
+ 	<td bordercolor="#000000"><input type="text" name="S1" size="20" maxlength="40" disabled="disabled"/>
+ 	  <br/>
+ 	<td bordercolor="#000000" bgcolor="#EEECD0"><input type="text" name="S2" size="20" maxlength="30"
+disabled="disabled" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align="right" bordercolor="#000000"><span class="Estilo8">Total</span></td>
+ 	<td><input type="text" name="total" size="20" maxlength="30" disabled="disabled" /></td>
+</tr>
+<tr>
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td colspan="5" align="center">
+ 	<input type="button" name="Verifica" value="Verifica" onclick="verifica();"class="button"/>&nbsp;&nbsp;
+<input type="button" name="Calcular" value="Calcular" onclick="calcula();" class="button"/>&nbsp;&nbsp;
+ 	<input type="button" name="Restablecer" value="Restablecer" onclick="restablece();" class="button"/></td>
+</tr>
+ </table>
+</body>
+</html>
