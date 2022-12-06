@@ -1,331 +1,209 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Empresa de Transporte</title>
-	<style>
-      body {
-        background-color: #EEECD0;
-        margin: 0;
-        padding: 0;
-      }
-	  
-	  div {
- 	 	background-color: white;
-  		color: white;
-	  }
-	  </style>
-<script language="javascript">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Distribuidora de ropa</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<marquee behavior="scroll" direction="left"> Distribuidora de Ropa </marquee>
+        <img src="https://volca.com/wp-content/uploads/2019/11/terrestre.png" width="55" height="45" border="0"/>
+ <script language="javascript">
+	<!--
+		$(document).ready(function(){
+ 		$("#flip").click(function(){
+ 		$("#panel").slideDown("slow");
+ 	  	 });
+		});
+	//-->
+
+function algoritmo()
+{
+    let genero, origen, talla;
+    let descuento, monto_a_pagar, monto_comprado;
+    monto_comprado = parseFloat (document.formulario1.monto_comprado.value);
+    genero = parseInt (document.formulario1.genero.value);
+    origen = parseInt (document.formulario1.origen.value);
+    talla = parseInt (document.formulario1.talla.value);
+    descuento=0;
+    if(origen==1&&talla==1&&genero==1)
+        descuento=monto_comprado*0.1;
+    if(origen==1&&talla==2&&genero==1)
+        descuento=monto_comprado*0.12;
+    if(origen==1&&talla==3&&genero==1)
+        descuento=monto_comprado*0.15;
+    if(origen==1&&talla==1&&genero==2)
+        descuento=monto_comprado*0.15;
+    if(origen==1&&talla==2&&genero==2)
+        descuento=monto_comprado*0.17;
+    if(origen==1&&talla==3&&genero==2)
+        descuento=monto_comprado*0.2;
+    if(origen==2&&talla==1&&genero==1)
+        descuento=monto_comprado*0.05;
+    if(origen==2&&talla==2&&genero==1)
+        descuento=monto_comprado*0.07;
+    if(origen==2&&talla==3&&genero==1)
+        descuento=monto_comprado*0.1;
+    if(origen==2&&talla==1&&genero==2)
+        descuento=monto_comprado*0.07;
+    if(origen==2&&talla==2&&genero==2)
+        descuento=monto_comprado*0.09;
+    if(origen==2&&talla==3&&genero==2)
+        descuento=monto_comprado*0.12;
+    monto_a_pagar=monto_comprado-descuento;
+    document.formulario1.descuento.value = descuento;
+    document.formulario1.monto_a_pagar.value = monto_a_pagar;
+}
+        </script>
+        <style type="text/css">
 <!--
-	function verifica(){
-	 resultado1="ninguna";
-	for(contador=0;contador<formulario.grupo1.length; contador++){
-	if(formulario.grupo1[contador].checked){
-		resultado1=String.fromCharCode(contador+65);
-			                       }
-			   }
-
-	if(resultado1=='A'){
-		formulario.C1.disabled=false;
-		formulario.C2.disabled=false;
-		formulario.C3.disabled=false;
-		formulario.P1.disabled=true;
-		formulario.P2.disabled=true;
-		formulario.P3.disabled=true;
-		formulario.E1.disabled=true;
-		formulario.E2.disabled=true;
-		formulario.E3.disabled=true;
-		formulario.S1.disabled=true;
-			    }
-
-	if(resultado1=='B'){
-		formulario.C1.disabled=true;
-		formulario.C2.disabled=true;
-		formulario.C3.disabled=true;
-		formulario.P1.disabled=false;
-		formulario.P2.disabled=false;
-		formulario.P3.disabled=false;
-		formulario.E1.disabled=true;
-		formulario.E2.disabled=true;
-		formulario.E3.disabled=true;
-		formulario.S1.disabled=true;
-			    }
-
-	if(resultado1=='C'){
-		formulario.C1.disabled=true;
-		formulario.C2.disabled=true;
-		formulario.C3.disabled=true;
-		formulario.P1.disabled=true;
-		formulario.P2.disabled=true;
-		formulario.P3.disabled=true;
-		formulario.E1.disabled=false;
-		formulario.E2.disabled=false;
-		formulario.E3.disabled=false;
-		formulario.S1.disabled=true;
-			   }
-
-	if(resultado1=='D'){
-		formulario.C1.disabled=true;
-		formulario.C2.disabled=true;
-		formulario.C3.disabled=true;
-		formulario.P1.disabled=true;
-		formulario.P2.disabled=true;
-		formulario.P3.disabled=true;
-		formulario.E1.disabled=true;
-		formulario.E2.disabled=true;
-		formulario.E3.disabled=true;
-		formulario.S1.disabled=false;
-			   }
+		.Estilo3 {color: #000000}
+		.button:hover {background-color:#CBD8EB}
+		    body {	
+			background-color: #DCDCDC;
+			font-family: Arial, Helvetica, sans-serif;	
+			font-size: 1em;	
+			line-height: 2em;	
+			color: #336699;
+			margin-top: 0.1em;
+			margin-right: 0.1em;
+			margin-bottom: 0.1em;
+			margin-left: 0.1em
 			}
-	function calcula(){
-		if(formulario.C1.disabled==false && formulario.C2.disabled==false &&
-		formulario.C3.disabled==false){
-		 agro=3.1*formulario.C1.value;
-		 meta=2.75*formulario.C2.value;
-		 mad=3.05*formulario.C3.value;
-		  formulario.C4.value=agro;
-		  formulario.C5.value=meta;
-		  formulario.C6.value=mad;
-		   suma=agro+meta+mad;
-		formulario.total.value=suma;
-					     }
+	<style>		
+    .dropbtn {
+    background-color: black;
+    color: white;
+    padding: #px;
+    font-size: #px;
+    border: none;
+	}
+			
+    .dropdown {
+    position: relative;
+    display: inline-block;
+	}
+	
+	.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightgrey;
+    min-width: #px;
+    z-index: 1;
+	}	
+	
+	.dropdown-content a {
+    color: black;
+    padding: #px #px;
+    text-decoration: none;
+    display: block;
+	}
+	
+	.dropdown-content a:hover {background-color: white;}
+	.dropdown:hover .dropdown-content {display: block;}
+	.dropdown:hover .dropbtn {background-color: grey;}	
+	
+	.Estilo4 {font-size: 18}
+.Estilo5 {font-weight: bold}
+	-->
+        </style>
+</head>
+</div>
+<body class="p-3 m-0 border-0 bd-example">
+<body>
+	<div class="btn-group" role="group" aria-label="Grupo de botones con menú desplegable anidado" _mstaria-label=	 "1430650">
+      <div class="btn-group" role="group">
+        <div align="center">
 
-	if(formulario.P1.disabled==false && formulario.P2.disabled==false &&
-		formulario.P3.disabled==false){
-		   lima=22*formulario.P1.value;
-		   ica=10*formulario.P2.value;
-		   nazca=30*formulario.P3.value;
-			formulario.P4.value=lima;
-		        formulario.P5.value=ica;
-		        formulario.P6.value=nazca;
-			suma=lima+ica+nazca;
-			formulario.total.value=suma;
-					       }
-
-	if(formulario.E1.disabled==false && formulario.E2.disabled==false &&
-		   formulario.E3.disabled==false){
-		  sob=5*formulario.E1.value;
- 		  paq=12*formulario.E2.value;
-		  bul=7*formulario.E3.value;
-		   formulario.E4.value=sob;
-		   formulario.E5.value=paq;
-		   formulario.E6.value=bul;
-			suma=sob+paq+bul;
-		  formulario.total.value=suma;
-						  }
-
-	if(formulario.S1.disabled==false){
-	   sob=25*formulario.S1.value;
-		formulario.S2.value=sob;
-		formulario.total.value=sob;
-					 }
-				}
-function restablece(){
-	const form=document.querySelector('formulario');
-	 formulario.reset();
-	 formulario.C1.disabled=true;
-	 formulario.C2.disabled=true;
-	 formulario.C3.disabled=true;
-	 formulario.P1.disabled=true;
-	 formulario.P2.disabled=true;
-	 formulario.P3.disabled=true;
-	 formulario.E1.disabled=true;
-	 formulario.E2.disabled=true;
-	 formulario.E3.disabled=true;
-	formulario.S1.disabled=true;
-		     }
-//--->
-
-</script>
-  <style type="text/css">
-	.titulo {
-	 font-family: Georgia, "Times New Roman", Times, serif;
-	 font-size: 36px;
-	 color: #900; }
-
-	.button {
- 	  display: inline-block;
- 	  padding: 10px 18px;
- 	  font-size: 14px;
- 	  cursor: pointer;
- 	  text-align: center;
- 	  text-decoration: none;
- 	  outline: none;
- 	  color:#000;
- 	  background-color:#DCCDBE;
- 	  border: none;
- 	  border-radius: 10px;
- 	  box-shadow: 0 8px #999; }
-
-	 .button:hover {background-color:#DBB7BE}
-	  .button:active {
- 	   background-color:#000;
- 	   box-shadow: 0 2px #333;
- 	   transform: translateY(4px);
-			 }
-  .Estilo4 {font-family: Bahnschrift}
-  .Estilo7 {
-	font-family: "Baskerville Old Face";
-	color: #000000;
-	font-weight: bold;
-	font-style: italic;
-	font-size: large;
-}
-  .Estilo8 {font-family: "Eras Bold ITC"}
-  .Estilo11 {
-	font-family: "Baskerville Old Face";
-	color: #33FF66;
-}
-.Estilo14 {font-size: 30px}
-  .Estilo16 {font-family: Bahnschrift; color: #000000; }
-  .Estilo21 {color: #00FFFF}
-  .Estilo23 {font-size: xx-large}
-  .Estilo26 {font-size: x-large}
-  .Estilo27 {
-	color: #CC6633;
-	font-style: italic;
-	font-size: 36px;
-}
-  .Estilo28 {color: #CC9900}
-.Estilo30 {
-	color: black;
-	font-size: large;
-	font-style: italic;
-	font-weight: bold;
-}
-  .Estilo31 {font-size: 36px}
-  </style> </head>
- <body>
- <form name="formulario">
- <div class="capa"> </div>	 
-      <p>
-        <marquee direction="right" behavior="scroll" width=400 height=100>
-        </marquee>
-        <body background="https://th.bing.com/th/id/OIP.2s-kMCCDDYhzUR19pXzZ0gHaEo?pid=ImgDet&rs=1">
-        <span class="Estilo21">        </span>
-        <marquee behavior="scroll" direction="right" class="Estilo4 Estilo27"> 
-        Bienvenido a la Línea de Transporte TexMex
-        </marquee>
-        <span class="Estilo21"> . </span></p>
-      <h2 align="center" class="Estilo11"> <span class="Estilo10"> <marquee behavior="alternate"> <img src="https://volca.com/wp-content/uploads/2019/11/terrestre.png" name="carrito" width="90" height="89" border="2" id="carrito"/> </marquee>
-      <h2 align="center" class="Estilo11"><span class="Estilo14"><span class="Estilo28">__________ <span class="Estilo31">L</span></span></span><span class="Estilo28"><span class="Estilo14">uis</span> <span class="Estilo31">D</span><span class="Estilo14">aizo</span> <span class="Estilo31">V</span><span class="Estilo14">arela</span> <span class="Estilo31">R</span><span class="Estilo14">odriguez </span>__________</span></h2>
-      <table width="672" height="639" border="1" align="center" bordercolor="#000000" bgcolor="#A9DFBF">
- <tr>
-<td width="22">&nbsp;</td>
-<td width="152">&nbsp;</td>
-<td>&nbsp;</td><td width="150"> <span class="Estilo4">Ingrese los datos: </span></td> 
-<td width="199"> <div align="right" class="Estilo4">Subtotal </div></td>
- </tr>
-<tr bgcolor="#EEECD0">
-  <td height="108" bgcolor="#FFFF99"><input type="radio" name="grupo1" value="A" /></td>
-  <td width="152" align="center" bgcolor="#FAD7A0"><span class="Estilo16"><span class="Estilo23">C</span><span class="Estilo26">arga</span></span></td>
-  <td width="115" bordercolor="#EEECD0"><div align="center" class="Estilo30">Agroindustrial<br />
-    Metales<br />
-    Madera</div></td>
- 
-   <td bgcolor="#EEECD0">
- 	 <p>
- 	   <input type="text" name="C1" size="20" maxlength="30" disabled="disabled"/><input type="text" name="C2" size="20" maxlength="30" disabled="disabled"/><input type="text" name="C3" size="20" maxlength="30" disabled="disabled"/>   
-      </p> 	 </td>
- <td bgcolor="#EEECD0">
- 	<p>
- 	  <input type="text" name="C4" size="20" maxlength="30" disabled="disabled" />
- 	  </p>
- 	<p>
- 	  <input type="text" name="C5" size="20" maxlength="30" disabled="disabled" />
-      </p>
- 	<p>
- 	  <input type="text" name="C6" size="20" maxlength="30" disabled="disabled" /> 
-    </p></td>
-</tr>
-<tr></tr>
-<tr>
-<td width="22" height="41">&nbsp;</td>
-<td width="152">&nbsp;</td>
-<td>&nbsp;</td><td width="150"> <span class="Estilo4">Ingrese los datos: </span></td> 
-<td width="199"> <div align="right" class="Estilo4">Subtotal: </div></td>
-</tr>
-<tr bgcolor="#EEECD0">
-<td bordercolor="#000000" bgcolor="#FFFF99"><input type="radio" name="grupo1" value="B" /></td>
-<td align="center" bgcolor="#CCFFCC"> <p class="Estilo16"><span class="Estilo23">P</span><span class="Estilo26">asajeros</span> </p>
-  <p class="Estilo4">&nbsp;</p></td>
- <td bgcolor="#EEECD0"><div align="center"><span class="Estilo7">Lima-Ica<br />
-   Ica-Nazca<br />
-   Nazca-Ayacucho</span><br /> 
- </div></td>
-   <td><p>
-     <input type="text" name="P1" size="20" maxlength="30" disabled="disabled"/><input type="text" name="P2" size="20" maxlength="30" disabled="disabled"/><input type="text" name="P3" size="20" maxlength="30" disabled="disabled"/>  
-    </p>     </td>
- <td bgcolor="#EEECD0">
- 	<p>
- 	  <input type="text" name="P4" size="20" maxlength="30" disabled="disabled" />
- 	  </p>
- 	<p>
- 	  <input type="text" name="P5" size="20" maxlength="30" disabled="disabled" />
-      </p>
- 	<p>
- 	  <input type="text" name="P6" size="20" maxlength="30" disabled="disabled" /> 
-    </p></td>
-</tr>
-<tr></tr>
-<tr>
-    <td width="22" height="46">&nbsp;</td>
-    <td width="152">&nbsp;</td>
-    <td>&nbsp;</td><td width="150"> <span class="Estilo4">Ingrese los datos: </span></td>
-    <td width="199"><div align="right" class="Estilo4">Subtotal</div></td>
-</tr>
- <tr bgcolor="#EEECD0">
-<td bgcolor="#FFFF66"> <input type="radio" name="grupo1" value="C" /></td>
-<td align="center" bordercolor="#000000" background="https://st3.depositphotos.com/1432405/12913/v/950/depositphotos_129138518-stock-illustration-cardboard-box-icon-cartoon-style.jpg" bgcolor="#99FF99"><span class="Estilo16"><span class="Estilo23">E</span><span class="Estilo26">ncomiendas</span></span></td>
- <td background="https://st3.depositphotos.com/1432405/12913/v/950/depositphotos_129138518-stock-illustration-cardboard-box-icon-cartoon-style.jpg" bgcolor="#33FF99"> <div align="center"><span class="Estilo30">Sobres <br/> 
-   Paquetes <br/> 
-   Bultos </span><br/> 
- </div></td>
- <td>
-	<p align="center">
-	  <input name="E1" type="text" disabled="disabled" class="Estilo8" size="20" maxlength="30"/>
-	  <input type="text" name="E3" size="20" maxlength="30" disabled="disabled"/>
-	  <input type="text" name="E2" size="20" maxlength="20" disabled="disabled"/>
-	</p>	</td>
-   <td bgcolor="#EEECD0">
-	 <p>
-	   <input type="text" name="E4" size="20" maxlength="30" disabled="disabled" />
-      </p>
-	 <p>
-	   <input type="text" name="E5" size="20" maxlength="30" disabled="disabled" />
-      </p>
-	 <p>
-	   <input type="text" name="E6" size="20" maxlength="30" disabled="disabled" /> 
-      </p></td>
-</tr>
-<tr></tr>
-<tr>
-	<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td> <span class="Estilo4">Ingrese los datos: </span></td><td> <div align="right" class="Estilo4">Subtotal: </div></td>
-</tr>
- <tr bgcolor="#EEECD0">
-<td height="37" bgcolor="#33FFCC"> <input type="radio" name="grupo1" value="D" /> </td>
-<td colspan="2" align="center" bordercolor="#000000" bgcolor="#FFFF99"> <span class="Estilo4"><span class="Estilo23">A</span><span class="Estilo26">nimales.</span></span></td>
- 	<td bordercolor="#000000"><input type="text" name="S1" size="20" maxlength="40" disabled="disabled"/>
- 	  <br/>
- 	<td bordercolor="#000000" bgcolor="#EEECD0"><input type="text" name="S2" size="20" maxlength="30"
-disabled="disabled" /></td>
-</tr>
-<tr>
-<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td align="right" bordercolor="#000000"><span class="Estilo8">Total</span></td>
- 	<td><input type="text" name="total" size="20" maxlength="30" disabled="disabled" /></td>
-</tr>
-<tr>
-<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
-</tr>
-<tr>
-<td height="49" colspan="5" align="center">
- 	<input type="button" name="Verifica" value="Verifica" onclick="verifica();"class="Estilo8"/>
- 	&nbsp; &nbsp;
-    <input type="button" name="Calcular" value="Calcular" onclick="calcula();" class="Estilo8"/>
-    &nbsp; &nbsp;
- 	<input type="button" name="Restablecer" value="Restablecer" onclick="restablece();" class="Estilo8"/></td>
-</tr>
- </table>
- </body>
+        <form name="formulario1">
+          <div align="center">
+              <p>&nbsp;</p>
+              <table width="365" border="2" align="center" cellpadding="4" cellspacing="3" bordercolor="#000000" bgcolor="#AECEFF" class="Estilo5" style="text-align: left; margin-left: auto; margin-right: auto;"><!--DWLayoutTable-->
+                <tbody>
+                  <tr>
+				  <TD><div align="center"><img src="https://th.bing.com/th/id/OIP.5oOg-xZAJXyuAvVXg-O6XQHaE3?pid=ImgDet&rs=1"width="100" height="100"> </div></TD>
+                    <td width="186" bordercolor="#000000" bgcolor="#AECEFF"><div align="center" class="Estilo5"><span class="Estilo3">Ingresa el valor de monto comprado</span>:
+                    </div>
+                    <td width="146" bordercolor="#000000" bgcolor="#AECEFF">
+                      <div align="left">
+                        <input name="monto_comprado" type="number" required="required" step="0.000001" />
+                      </div></td>
+                  </tr>
+                  <tr>
+				  <TD><div align="center"><img src="https://cdn-01.media-brady.com/store/stes/media/catalog/product/cache/9/image/85e4522595efc69f496374d01ef2bf13/1563980804/d/m/dmeu_gplyp_a_141_311_1_std.lang.all.gif"width="100" height="100"> </div></TD>
+                    <td bordercolor="#000000" bgcolor="#AECEFF"><span class="Estilo3">
+                      <blockquote>
+                        <p>Selecciona el valor de genero:</p>
+                      </blockquote>
+                    </span></td>
+                    <td bordercolor="#000000" bgcolor="#AECEFF"><div align="center"><span class="Estilo3">
+                      <select name="genero" class="Estilo5" required="required">
+                        <option value="1">Hombres</option>
+                        <option value="2">Mujeres</option>
+                      </select>
+                    </span></div></td>
+                  </tr>
+                  <tr>
+				  <TD><div align="center"><img src="https://i0.pngocean.com/files/67/588/1022/money-banknote-illustration-cartoon-hand-painted-banknotes.jpg"width="100" height="100"> </div></TD>
+                    <td bordercolor="#000000" bgcolor="#AECEFF"><span class="Estilo3">
+                      <blockquote>
+                        <p>Selecciona el valor de origen:</p>
+                      </blockquote>
+                    </span></td>
+                      <td bordercolor="#000000" bgcolor="#AECEFF"><div align="center"><span class="Estilo3">
+                        <select name="origen" class="Estilo5" required="required">
+                          <option value="1">Nacional</option>
+                          <option value="2">Importado</option>
+                        </select>
+                      </span> </div></td>
+                  </tr>
+                  <tr>
+				  <TD><div align="center"><img src="https://th.bing.com/th/id/OIP.NJm5Gle2WN2pHgVwRJztVgHaH3?pid=ImgDet&rs=1" width="100" height="100"> </div></TD>
+                    <td bordercolor="#000000" bgcolor="#AECEFF"><span class="Estilo3">
+                      <blockquote>
+                        <p>Selecciona el valor de talla:</p>
+                      </blockquote>
+                    </span></td>
+                      <td bordercolor="#000000" bgcolor="#AECEFF"><div align="center"><span class="Estilo3">
+                        <select name="talla" class="Estilo5" required="required">
+                          <option value="1">S</option>
+                          <option value="2">M</option>
+                          <option value="3">L</option>
+                      </select>
+                      </span> </div></td>
+                  </tr>
+                  <tr align="center">
+                    <td colspan="2" rowspan="1" align="left" bordercolor="#000000" bgcolor="#AECEFF">
+                      <div align="center"><span class="Estilo3">
+                      <input type="button" class="Estilo5" onClick="algoritmo();" value="Procesar" />
+                      </span> <span class="Estilo3">
+                      <input name="reset" type="reset" class="Estilo5" />
+                    </span></div></td>
+                  </tr>
+                  <tr>
+				   <TD><div align="center"><img src="https://th.bing.com/th/id/R.2ba8e2637a77dcae13004fdbf97c68e8?rik=zgGTwIwXqSENHA&pid=ImgRaw&r=0" width="100" height="100"> </div></TD>
+                    <td bordercolor="#000000" bgcolor="#AECEFF"><span class="Estilo3">
+                      <blockquote>
+                        <p>Valor de descuento:</p>
+                      </blockquote>
+                    </span></td>
+                      <td bordercolor="#000000" bgcolor="#AECEFF">
+                        <div align="center">
+                          <input name="descuento" type="number" step="0.000001" />                        
+                    </div></td>
+                  </tr>
+                  <tr>
+				  <TD><div align="center"><img src="https://t4.ftcdn.net/jpg/01/31/83/03/500_F_131830363_X2MyJMpQkj8A4Urqk3IuWbzV7RxJscwG.jpg" width="100" height="100"> </div></TD>
+                    <td bordercolor="#000000" bgcolor="#AECEFF"><span class="Estilo3">
+                      <blockquote>
+                        <p class="Estilo5">Valor de monto a pagar:</p>
+                      </blockquote>
+                    </span></td>
+                      <td bordercolor="#000000" bgcolor="#AECEFF">
+                        <div align="center">
+                          <input name="monto_a_pagar" type="number" step="0.000001" />                        
+                    </div></td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+        </form>
+</body>
 </html>
